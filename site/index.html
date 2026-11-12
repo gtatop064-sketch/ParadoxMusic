@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ParadoxMusic — музыкальный плеер для Windows</title>
+  <meta name="description" content="Бесплатный музыкальный плеер для Windows 10 и 11: свои файлы, поиск по SoundCloud и YouTube, персональная волна, тексты песен, эквалайзер и Last.fm.">
+  <meta name="theme-color" content="#070707">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ParadoxMusic — музыкальный плеер для Windows">
+  <meta property="og:description" content="Свои файлы, онлайн-каталоги и волна, которая учится на том, что вы слушаете.">
+  <meta property="og:image" content="assets/screen-home.png">
+  <link rel="icon" type="image/png" href="assets/icon-64.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Onest:wght@400;500&family=Unbounded:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="nav">
+    <div class="wrap nav-row">
+      <a class="brand" href="#top" aria-label="ParadoxMusic, наверх">
+        <img src="assets/icon-64.png" alt="" width="28" height="28">
+        <span>ParadoxMusic</span>
+      </a>
+      <nav aria-label="Разделы">
+        <a href="#features">Возможности</a>
+        <a href="#screens">Как выглядит</a>
+        <a href="#install">Установка</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn-red btn-small" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="kicker">Плеер · Windows 10 / 11 · x64</p>
+          <h1>Музыкальный плеер для Windows.</h1>
+          <p class="lead">Ваши файлы, SoundCloud и YouTube в одном окне. «Моя волна» подбирает треки по лайкам, дослушиваниям и пропускам.</p>
+          <div class="actions">
+            <a class="btn btn-red" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">
+              Скачать для Windows
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/gtatop064-sketch/ParadoxMusic">Исходники на GitHub</a>
+          </div>
+          <p class="release-meta" data-release-meta>Бесплатно · открытый код · лицензия MIT</p>
+        </div>
+        <figure class="stage reveal">
+          <div class="window">
+            <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>ParadoxMusic</span></div>
+            <img src="assets/screen-home.png" width="1440" height="900" alt="Главный экран ParadoxMusic: «Моя волна» с кнопкой «Слушать волну», рекомендации и плеер внизу">
+          </div>
+          <figcaption>+ Главный экран · «Моя волна»</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Коротко">
+      <div class="wrap strip-row">
+        <p><b>3</b><span>источника в одной медиатеке: ваши файлы, SoundCloud, YouTube</span></p>
+        <p><b>6</b><span>режимов волны: моя, открытия, любимое, энергия, спокойствие, случайно</span></p>
+        <p><b>RU / EN</b><span>интерфейс на двух языках</span></p>
+      </div>
+    </section>
+
+    <section class="sec" id="features">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Возможности</p>
+          <h2>Всё для того, чтобы слушать.</h2>
+        </header>
+        <ol class="features">
+          <li class="reveal"><span class="num">01</span><h3>Одна медиатека</h3><p>Свои MP3, FLAC, WAV, OGG и AAC рядом с треками из SoundCloud и YouTube. Один поиск по трекам, исполнителям, альбомам и плейлистам.</p></li>
+          <li class="reveal"><span class="num">02</span><h3>«Моя волна»</h3><p>Бесконечный поток, который учитывает лайки, дослушивания, пропуски и плейлисты. Чередует исполнителей и не повторяет то, что звучало последние шесть часов.</p></li>
+          <li class="reveal"><span class="num">03</span><h3>Тексты песен</h3><p>Синхронные строки, которые подсвечиваются вместе с музыкой в полноэкранном плеере.</p></li>
+          <li class="reveal"><span class="num">04</span><h3>Звук</h3><p>Эквалайзер, кроссфейд между треками и режим «Чистый звук» без эффектов.</p></li>
+          <li class="reveal"><span class="num">05</span><h3>Чарты</h3><p>Популярное в каталоге и «Мой чарт» за 7 или 30 дней по вашим реальным прослушиваниям.</p></li>
+          <li class="reveal"><span class="num">06</span><h3>Last.fm</h3><p>Скробблинг прослушиваний. История с других устройств помогает «Моей волне» точнее угадывать вкус.</p></li>
+          <li class="reveal"><span class="num">07</span><h3>Оформление под себя</h3><p>Редактор темы, свой фон из фото, GIF или видео, прозрачность, шрифты, расположение плеера и меню.</p></li>
+          <li class="reveal"><span class="num">08</span><h3>На рабочем столе</h3><p>Мини-плеер «остров» и 3D-персонаж на рабочем столе, через которые можно управлять музыкой, не открывая окно.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="paper" id="screens" aria-label="Скриншоты">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Как выглядит</p>
+          <h2>Настоящие экраны.</h2>
+        </header>
+        <div class="slider reveal" data-slider>
+          <div class="slides">
+            <figure class="slide is-active">
+              <img src="assets/screen-home.png" width="1440" height="900" loading="lazy" alt="Главный экран с «Моей волной» и рекомендациями">
+              <figcaption><b>Главная</b><span>Волна, рекомендации и плеер всегда под рукой.</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/screen-customize.png" width="1440" height="900" loading="lazy" alt="Настройки кастомизации: прозрачность интерфейса, размытие панелей, яркость поверхностей">
+              <figcaption><b>Кастомизация</b><span>Тема, плеер, реакция на ритм, профиль и главная.</span></figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/screen-audio.png" width="1440" height="900" loading="lazy" alt="Настройки звука">
+              <figcaption><b>Звук</b><span>Эквалайзер, кроссфейд и чистый звук.</span></figcaption>
+            </figure>
+          </div>
+          <div class="slider-nav">
+            <button class="arrow" type="button" data-prev aria-label="Предыдущий экран">←</button>
+            <span class="counter" aria-live="polite"><b data-current>01</b> / 03</span>
+            <button class="arrow" type="button" data-next aria-label="Следующий экран">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="wave">
+      <div class="wrap wave-grid">
+        <header class="sec-head reveal">
+          <p class="kicker">Как работает волна</p>
+          <h2>Учится на том, что вы слушаете.</h2>
+        </header>
+        <dl class="signals reveal">
+          <div><dt>Лайк</dt><dd>сильнее всего поднимает исполнителя и жанр</dd></div>
+          <div><dt>Дослушали</dt><dd>трек и похожие звучат чаще</dd></div>
+          <div><dt>Пропустили в начале</dt><dd>такое волна покажет реже</dd></div>
+          <div><dt>Дизлайк</dt><dd>трек больше не попадётся</dd></div>
+          <div><dt>Last.fm</dt><dd>добавляет любимых артистов с других устройств</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="install">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Четыре шага</p>
+          <h2>Как установить.</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal"><span class="num">01</span><h3>Скачайте установщик</h3><p>Файл <code>ParadoxMusic-…-Setup.exe</code> со страницы релизов.</p></li>
+          <li class="reveal"><span class="num">02</span><h3>Запустите его</h3><p>Можно выбрать папку. Установка только для вашего пользователя, права администратора не нужны.</p></li>
+          <li class="reveal"><span class="num">03</span><h3>Разрешите запуск</h3><p>Сборка пока без цифровой подписи. Если Windows покажет SmartScreen, нажмите «Подробнее» → «Выполнить в любом случае».</p></li>
+          <li class="reveal"><span class="num">04</span><h3>Включите музыку</h3><p>Добавьте свои файлы или найдите трек в поиске. Аккаунт не обязателен.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec privacy" aria-labelledby="privacy-title">
+      <div class="wrap privacy-row reveal">
+        <h2 id="privacy-title">Ваша музыка остаётся у вас.</h2>
+        <p>Медиатека, история и статистика хранятся на вашем компьютере. Ключи сервисов шифруются средствами Windows. Приложение не показывает рекламу.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="faq">
+      <div class="wrap faq-grid">
+        <header class="sec-head reveal">
+          <p class="kicker">Вопросы</p>
+          <h2>Частые вопросы.</h2>
+        </header>
+        <div class="faq reveal">
+          <details><summary>Это бесплатно?</summary><p>Да. ParadoxMusic распространяется бесплатно, исходный код открыт под лицензией MIT.</p></details>
+          <details><summary>Какие форматы поддерживаются?</summary><p>MP3, WAV, FLAC, OGG, Opus, AAC/M4A и WebM. Воспроизведение зависит от декодера Chromium и конкретного файла.</p></details>
+          <details><summary>Почему Windows предупреждает при запуске?</summary><p>Сборка пока не подписана платным сертификатом, поэтому SmartScreen её не знает. Исходники открыты, сборку можно проверить или собрать самому.</p></details>
+          <details><summary>Как обновляться?</summary><p>Приложение само проверяет новые версии: «Настройки» → «Проверить обновления».</p></details>
+          <details><summary>Есть версия для macOS или телефона?</summary><p>Сейчас только Windows 10 и 11, 64 бита.</p></details>
+          <details><summary>Нужен ли аккаунт?</summary><p>Нет. Можно продолжить без аккаунта, музыка и настройки сохранятся на компьютере.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap final-inner reveal">
+        <h2>Включите свою музыку.</h2>
+        <a class="btn btn-red btn-big" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать для Windows</a>
+        <p class="release-meta" data-release-meta>Windows 10 / 11 · x64</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span>ParadoxMusic · MIT</span>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic">GitHub</a>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic/issues">Сообщить об ошибке</a>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Все версии</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
