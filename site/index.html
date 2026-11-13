@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ParadoxMusic — вся твоя музыка в одном плеере</title>
+  <meta name="description" content="Бесплатный музыкальный плеер для Windows 10 и 11: Spotify, SoundCloud и YouTube в одном окне, «Моя волна», полноэкранный плеер, эквалайзер, Last.fm и оформление под себя.">
+  <meta name="theme-color" content="#070707">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ParadoxMusic — вся твоя музыка в одном плеере">
+  <meta property="og:description" content="Spotify, SoundCloud и YouTube в одном плеере. Волна, которая знает, что ты любишь.">
+  <meta property="og:image" content="assets/screen-home.png">
+  <link rel="icon" type="image/png" href="assets/icon-64.png">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var seen = 0;
+      try { seen = sessionStorage.getItem("pm-intro"); } catch (e) {}
+      d.classList.add(seen ? "intro-short" : "intro");
+      setTimeout(function () { d.classList.add("intro-done"); }, 9000);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Onest:wght@400;500&family=Unbounded:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }</script>
+</head>
+<body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <canvas class="intro-gl"></canvas>
+    <div class="ld">
+      <p class="ld-word">Загрузка</p>
+      <div class="ld-disc">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="96" class="ld-vinyl"/>
+          <circle cx="100" cy="100" r="84" class="ld-groove"/>
+          <circle cx="100" cy="100" r="72" class="ld-groove"/>
+          <circle cx="100" cy="100" r="60" class="ld-groove"/>
+          <circle cx="100" cy="100" r="36" class="ld-label"/>
+          <path d="M100 4 A96 96 0 0 1 196 100" class="ld-shine"/>
+        </svg>
+        <span class="ld-n" id="ldN">0</span><span class="ld-pc">%</span>
+      </div>
+      <p class="ld-meta">+ ParadoxMusic<br>+ Плеер для Windows</p>
+    </div>
+  </div>
+
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="nav">
+    <div class="wrap nav-row">
+      <a class="brand" href="#top" aria-label="ParadoxMusic, наверх">
+        <img src="assets/icon-64.png" alt="" width="28" height="28">
+        <span>ParadoxMusic</span>
+      </a>
+      <nav aria-label="Разделы">
+        <a href="#wave">Волна</a>
+        <a href="#search">Поиск</a>
+        <a href="#custom">Под себя</a>
+        <a href="#download">Скачать</a>
+      </nav>
+      <a class="btn btn-red btn-small" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-stick">
+        <div class="hero-under" aria-hidden="true">
+          <p class="kicker">Лайкай · дослушивай · пропускай</p>
+          <p class="hero-under-title">Волна запомнит.</p>
+        </div>
+        <div class="wrap hero-copy">
+          <p class="kicker">ParadoxMusic · Windows 10 / 11</p>
+          <h1>Вся твоя музыка в одном плеере</h1>
+          <p class="lead">Spotify, SoundCloud и YouTube в одном окне. Волна, которая знает, что ты любишь.</p>
+          <div class="actions">
+            <a class="btn btn-cream" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать для Windows</a>
+            <a class="btn btn-ghost" href="#wave">Смотреть, как работает</a>
+          </div>
+          <p class="release-meta" data-release-meta>Бесплатно · открытый код</p>
+          <figure class="hero-fallback">
+            <img src="assets/screen-home.png" width="1440" height="900" alt="Главный экран ParadoxMusic">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Коротко">
+      <div class="wrap strip-row">
+        <p><b>3</b><span>сервиса в одном поиске: Spotify, SoundCloud, YouTube</span></p>
+        <p><b>∞</b><span>вариантов дизайна: свои цвета, фон, шрифты и расположение плеера</span></p>
+        <p><b>0 ₽</b><span>без подписок и рекламы</span></p>
+      </div>
+    </section>
+
+    <div class="features-video">
+      <section class="feature" id="wave">
+        <div class="wrap feature-grid">
+          <div class="feature-copy reveal">
+            <p class="kicker">Включи волну</p>
+            <h2>Бесконечный поток, собранный под тебя</h2>
+            <p>«Моя волна» смотрит на лайки, дослушивания и пропуски. Чередует артистов, убирает дизлайки и не повторяет то, что звучало последние шесть часов.</p>
+          </div>
+          <figure class="feature-video reveal"><video data-clip="home" muted loop playsinline preload="none" poster="assets/clips/home.jpg" aria-label="Видео: главный экран ParadoxMusic с волной и рекомендациями"><source src="assets/clips/home.webm" type="video/webm"></video></figure>
+        </div>
+      </section>
+
+      <section class="feature feature-flip" id="search">
+        <div class="wrap feature-grid">
+          <div class="feature-copy reveal">
+            <p class="kicker">Ищи где угодно</p>
+            <h2>Один поиск. Spotify, SoundCloud и YouTube</h2>
+            <p>Треки, артисты, альбомы и плейлисты в одной выдаче. Нашёл — нажал — играет.</p>
+          </div>
+          <figure class="feature-video reveal"><video data-clip="search" muted loop playsinline preload="none" poster="assets/clips/search.jpg" aria-label="Видео: поиск Gucci Mane и Kanye West в ParadoxMusic"><source src="assets/clips/search.webm" type="video/webm"></video></figure>
+        </div>
+      </section>
+
+      <section class="feature" id="player">
+        <div class="wrap feature-grid">
+          <div class="feature-copy reveal">
+            <p class="kicker">Смотри на музыку</p>
+            <h2>Плеер на весь экран с текстом песни</h2>
+            <p>Большая обложка, синхронный текст песни и визуализация, которая двигается вместе со звуком.</p>
+          </div>
+          <figure class="feature-video reveal"><video data-clip="player" muted loop playsinline preload="none" poster="assets/clips/player.png" aria-label="Видео: полноэкранный плеер ParadoxMusic"><source src="assets/clips/player.webm" type="video/webm"></video></figure>
+        </div>
+      </section>
+
+      <section class="feature feature-flip" id="library">
+        <div class="wrap feature-grid">
+          <div class="feature-copy reveal">
+            <p class="kicker">Всё своё рядом</p>
+            <h2>Медиатека, плейлисты и лайки в одном месте</h2>
+            <p>Треки из Spotify, SoundCloud и YouTube в одной коллекции. Собирай плейлисты, сохраняй артистов и альбомы.</p>
+          </div>
+          <figure class="feature-video reveal"><video data-clip="library" muted loop playsinline preload="none" poster="assets/clips/library.jpg" aria-label="Видео: медиатека ParadoxMusic"><source src="assets/clips/library.webm" type="video/webm"></video></figure>
+        </div>
+      </section>
+
+      <section class="feature" id="custom">
+        <div class="wrap feature-grid">
+          <div class="feature-copy reveal">
+            <p class="kicker">Сделай под себя</p>
+            <h2>Тема, фон, шрифты и плеер — как тебе нравится</h2>
+            <p>Редактор цветов, свой фон из фото, GIF или видео, прозрачность панелей, расположение плеера и меню. Сохраняй оформления и делись ими.</p>
+          </div>
+          <figure class="feature-video reveal"><video data-clip="settings" muted loop playsinline preload="none" poster="assets/clips/settings.jpg" aria-label="Видео: настройки оформления ParadoxMusic"><source src="assets/clips/settings.webm" type="video/webm"></video></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="surge" aria-labelledby="surge-title">
+      <div class="surge-stick">
+        <div class="surge-text">
+          <p class="kicker">Каждое прослушивание</p>
+          <h2 id="surge-title">делает волну точнее</h2>
+        </div>
+        <div class="surge-flash" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="paper" aria-labelledby="inside-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Что внутри</p>
+          <h2 id="inside-title">Всё для музыки. Бесплатно.</h2>
+        </header>
+        <ul class="inside">
+          <li class="reveal"><span class="num">01</span>Эквалайзер, кроссфейд и режим «Чистый звук»</li>
+          <li class="reveal"><span class="num">02</span>Синхронный текст песен в полноэкранном плеере</li>
+          <li class="reveal"><span class="num">03</span>Скробблинг в Last.fm и история с других устройств в волне</li>
+          <li class="reveal"><span class="num">04</span>Чарты и «Мой чарт» за 7 или 30 дней</li>
+          <li class="reveal"><span class="num">05</span>Импорт плейлистов из YouTube и SoundCloud по ссылке</li>
+          <li class="reveal"><span class="num">06</span>Мини-плеер «остров» поверх окон</li>
+          <li class="reveal"><span class="num">07</span>Свой фон приложения из фото, GIF или видео</li>
+          <li class="reveal"><span class="num">08</span>Интерфейс на русском и английском</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="burn" data-color="#ecebe8" aria-hidden="true"></div>
+
+    <section class="sec" id="download">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Скачать ParadoxMusic</p>
+          <h2>Поставь и включай</h2>
+        </header>
+        <div class="dl-card reveal">
+          <div>
+            <p class="kicker">Windows 10 / 11 · x64</p>
+            <h3>Windows</h3>
+            <p class="dl-file"><code>.exe</code> Установщик для твоего пользователя, права администратора не нужны.</p>
+            <p class="release-meta" data-release-meta>Последняя версия на GitHub</p>
+          </div>
+          <a class="btn btn-red btn-big" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать .exe</a>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span class="num">01</span><h3>Скачай</h3><p>Файл <code>ParadoxMusic-…-Setup.exe</code>.</p></li>
+          <li class="reveal"><span class="num">02</span><h3>Установи</h3><p>Можно выбрать папку. Займёт меньше минуты.</p></li>
+          <li class="reveal"><span class="num">03</span><h3>Разреши запуск</h3><p>Сборка пока без цифровой подписи. Если появится SmartScreen: «Подробнее» → «Выполнить в любом случае».</p></li>
+          <li class="reveal"><span class="num">04</span><h3>Включай</h3><p>Найди трек в поиске или включи «Мою волну». Аккаунт не обязателен.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec faq-sec" id="faq">
+      <div class="wrap faq-grid">
+        <header class="sec-head reveal">
+          <p class="kicker">Вопросы</p>
+          <h2>Коротко о главном</h2>
+        </header>
+        <div class="faq reveal">
+          <details><summary>Это правда бесплатно?</summary><p>Да. Без подписок и рекламы.</p></details>
+          <details><summary>Какие сервисы поддерживаются?</summary><p>Spotify, SoundCloud и YouTube в одном поиске и одной медиатеке.</p></details>
+          <details><summary>Почему Windows предупреждает при запуске?</summary><p>Сборка пока не подписана платным сертификатом, поэтому SmartScreen её не знает. Исходники открыты, сборку можно проверить.</p></details>
+          <details><summary>Как обновляться?</summary><p>Приложение само проверяет новые версии: «Настройки» → «Проверить обновления».</p></details>
+          <details><summary>Нужен ли аккаунт?</summary><p>Нет. Можно продолжить без аккаунта и сразу включить музыку. Аккаунт нужен для профиля и друзей.</p></details>
+          <details><summary>Есть версия для Mac или телефона?</summary><p>Сейчас только Windows 10 и 11, 64 бита.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <div class="burn" data-color="#070707" aria-hidden="true"></div>
+
+    <section class="final">
+      <div class="wrap final-inner reveal">
+        <p class="kicker">ParadoxMusic</p>
+        <h2>Включай свою музыку</h2>
+        <a class="btn btn-cream btn-big" data-download href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Скачать для Windows</a>
+        <p class="release-meta" data-release-meta>Windows 10 / 11 · x64</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span>ParadoxMusic · MIT</span>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic">GitHub</a>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic/issues">Сообщить об ошибке</a>
+      <a href="https://github.com/gtatop064-sketch/ParadoxMusic/releases">Все версии</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script type="module" src="js/intro.js"></script>
+  <script type="module" src="js/hero.js"></script>
+  <script type="module" src="js/wave.js"></script>
+  <script type="module" src="js/burn.js"></script>
+</body>
+</html>
