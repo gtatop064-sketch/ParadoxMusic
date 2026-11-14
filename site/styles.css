@@ -296,3 +296,19 @@ html.fx-surge .surge-flash { display: block; position: absolute; inset: 0; z-ind
 @media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
 button.btn { border: 0; font-family: inherit; cursor: pointer; }
 button.btn-ghost { background: transparent; border: 1px solid rgb(243 239 233 / 0.35); color: var(--fg); }
+
+/* Footer links and document pages */
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: flex-end; }
+.plan-fine a, .faq a, .doc a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+.doc-page { background: var(--bg); color: var(--fg); }
+.doc-top { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.doc-home { color: var(--muted); text-decoration: none; font-size: 14px; }
+.doc-home:hover { color: var(--fg); }
+.doc { max-width: 760px; padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(56px, 8vw, 104px); }
+.doc h1 { margin: 12px 0 8px; font: 600 clamp(40px, 6vw, 64px)/1.05 var(--serif); }
+.doc-date { margin: 0 0 40px; color: var(--faint); font-size: 14px; }
+.doc h2 { margin: 40px 0 12px; font: 600 28px/1.2 var(--serif); }
+.doc p, .doc li { color: var(--muted); font-size: 16px; line-height: 1.65; }
+.doc p { margin: 0 0 12px; }
+.doc ul { margin: 0 0 12px; padding-left: 20px; }
+@media (max-width: 640px) { .footer-links { justify-content: flex-start; } }
