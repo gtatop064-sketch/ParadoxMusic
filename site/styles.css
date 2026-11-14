@@ -100,7 +100,7 @@ h3 { font-size: 28px; line-height: 1.1; font-weight: 600; }
 .nav nav a:hover { color: var(--fg); }
 
 /* Intro loader */
-.intro { display: none; }
+div.intro { display: none; }
 html.intro .intro, html.intro-short .intro { display: block; position: fixed; inset: 0; z-index: 300; background: var(--bg); }
 html.intro-done .intro { display: none; }
 html.intro:not(.intro-done) body, html.intro-short:not(.intro-done) body { overflow: hidden; }
@@ -272,3 +272,27 @@ html.fx-surge .surge-flash { display: block; position: absolute; inset: 0; z-ind
   .btn { transition: none; }
   .ld-disc svg { animation: none; }
 }
+
+/* Plus pricing */
+.plus-lead { margin: 20px 0 0; color: var(--muted); max-width: 640px; font-size: 17px; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plan { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 32px 28px 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; }
+.plan-best { border-color: var(--red); }
+.plan h3 { margin: 0; font-size: 26px; }
+.plan-badge { position: absolute; top: 20px; right: 20px; margin: 0; padding: 4px 10px; border-radius: 999px; background: rgb(227 23 43 / 0.14); color: #ff8a95; font-size: 12px; }
+.plan-price { margin: 12px 0 0; font: 500 18px/1 var(--wide); color: var(--muted); }
+.plan-price span { font: 600 64px/1 var(--serif); color: var(--fg); margin-right: 4px; font-variant-numeric: tabular-nums; }
+.plan-note { margin: 0 0 20px; color: var(--faint); font-size: 14px; }
+.plan .btn { margin-top: auto; width: 100%; }
+.plan-fine { margin: 24px 0 0; color: var(--faint); font-size: 13px; }
+.pay-dialog { max-width: min(440px, calc(100vw - 32px)); padding: 32px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); color: var(--fg); }
+.pay-dialog::backdrop { background: rgb(0 0 0 / 0.6); }
+.pay-dialog[open] { animation: pay-in 220ms var(--ease-out, ease-out); }
+.pay-dialog h3 { margin: 8px 0 12px; font-size: 28px; }
+.pay-dialog p { color: var(--muted); }
+.pay-dialog .btn { margin-top: 12px; }
+@keyframes pay-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } }
+@media (prefers-reduced-motion: reduce) { .pay-dialog[open] { animation: none; } }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
+button.btn { border: 0; font-family: inherit; cursor: pointer; }
+button.btn-ghost { background: transparent; border: 1px solid rgb(243 239 233 / 0.35); color: var(--fg); }
