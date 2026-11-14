@@ -72,3 +72,13 @@ if ("IntersectionObserver" in window) {
 } else {
   items.forEach((el) => el.classList.add("in"));
 }
+
+// Plus plans: payment is not connected yet, so every plan opens a placeholder.
+(() => {
+  const dialog = document.querySelector(".pay-dialog");
+  if (!dialog) return;
+  document.querySelectorAll("[data-plan]").forEach((button) => button.addEventListener("click", () => {
+    dialog.querySelector("[data-pay-plan]").textContent = button.dataset.plan;
+    dialog.showModal();
+  }));
+})();
