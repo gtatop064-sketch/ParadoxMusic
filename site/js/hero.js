@@ -62,7 +62,7 @@ async function buildAtlas() {
     }
     g.globalAlpha = 1;
     g.font = "600 54px 'Cormorant Garamond', serif";
-    g.fillText("Моя волна", 40, 90);
+    g.fillText("Моё пространство", 40, 90);
     g.fillStyle = "#e3172b";
     g.font = "500 15px Unbounded, sans-serif";
     g.fillText("+ ЛАЙКИ · ДОСЛУШИВАНИЯ · ПРОПУСКИ", 42, 360);
