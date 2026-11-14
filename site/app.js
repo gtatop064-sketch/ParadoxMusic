@@ -1,6 +1,6 @@
 // ParadoxMusic site: latest installer link, screenshot slider, reveal on scroll.
 // Everything degrades gracefully: without JS the buttons point to the Releases page.
-const REPO = "gtatop064-sketch/ParadoxMusic";
+const REPO = "ParadoxStudioApp/ParadoxMusic";
 document.documentElement.classList.add("js");
 
 // 1. Latest Windows installer from GitHub Releases (pre-releases included, since the app is in beta).
